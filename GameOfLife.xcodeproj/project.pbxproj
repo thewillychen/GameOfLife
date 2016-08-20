@@ -8,23 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		3F65CF061D667230009A7B02 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F65CF051D667230009A7B02 /* main.cpp */; };
+		3FB5A0041D69046C00A2A6E1 /* input1.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3FB5A0001D68FE3A00A2A6E1 /* input1.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		3F65CF001D667230009A7B02 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
+			dstPath = usr/share/man/man1;
 			dstSubfolderSpec = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		3FB5A0021D69043700A2A6E1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				3FB5A0041D69046C00A2A6E1 /* input1.txt in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3F65CF021D667230009A7B02 /* GameOfLife */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameOfLife; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F65CF051D667230009A7B02 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3FB5A0001D68FE3A00A2A6E1 /* input1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = input1.txt; path = ../input1.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +69,7 @@
 		3F65CF041D667230009A7B02 /* GameOfLife */ = {
 			isa = PBXGroup;
 			children = (
+				3FB5A0001D68FE3A00A2A6E1 /* input1.txt */,
 				3F65CF051D667230009A7B02 /* main.cpp */,
 			);
 			path = GameOfLife;
@@ -72,6 +85,7 @@
 				3F65CEFE1D667230009A7B02 /* Sources */,
 				3F65CEFF1D667230009A7B02 /* Frameworks */,
 				3F65CF001D667230009A7B02 /* CopyFiles */,
+				3FB5A0021D69043700A2A6E1 /* CopyFiles */,
 			);
 			buildRules = (
 			);

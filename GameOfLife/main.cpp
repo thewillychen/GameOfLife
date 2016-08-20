@@ -10,6 +10,7 @@
 #include <unordered_map>
 #include <vector>
 #include <boost/functional/hash.hpp>
+#include <fstream>
 
 using namespace std;
 
@@ -22,11 +23,11 @@ class Game {
 public:
     Game(vector<cell> cells);
     void update();
+    void print();
     
 private:
     cell_map living;
-    cell_map neighbors;
-    cell_map nextGen;
+    cell_map deadNeighbors;
     int countNeighbors(long long x, long long y);
     
 };
@@ -36,7 +37,6 @@ Game::Game(vector<cell> cells){
     for(cell c : cells){
         living[c] = 1;
     }
-
 }
 
 void Game::update(){
@@ -46,7 +46,23 @@ void Game::update(){
     //      At each stage, add each of these neighbors into the the map of neighbors and increment the count
     //      if found
     //Iterate through the neighbors map to add to nextGen every dead cell that has count 3// can do this during last step probably. add it to nextgen if it hits 3, remove if it hits 4
+    cell_map nextGen;
+    for(auto cellValue : living){
+        cell c = cellValue.first;
+        int numAlive = countNeighbors(c.first, c.second);
+        if(numAlive == 2 || numAlive == 3){
+            nextGen[c] = 1;
+        }
+    }
     
+    for(auto cellToCount : deadNeighbors){
+        if(cellToCount.second == 3){
+            nextGen[cellToCount.first] = 1;
+        }
+    }
+    deadNeighbors.clear();
+    //set living to be the next generation
+    living = nextGen;
 }
 
 int Game::countNeighbors(long long x, long long y){
@@ -61,19 +77,81 @@ int Game::countNeighbors(long long x, long long y){
             numAlive++;
         }
          //Only adding dead cells to the neighbors list. Alive cells will be taken care of in the iteration of update using countNeighbors
-        else if(neighbors.count(c) > 0){
-            neighbors[c] = neighbors[c]+1;
-        }
         else{
-            neighbors[c] = 1;
+            deadNeighbors[c]+=1;
         }
     }
     return numAlive;
 }
 
+void Game::print(){
+    cout << "Living cells" << endl;
+    for(auto cellValue : living){
+        cout << cellValue.first.first << ", " << cellValue.first.second << endl;
+    }
+}
+
+vector<cell> parseInput(string file){
+    string line;
+    ifstream input;
+    input.open(file);
+    vector<cell> aliveCells;
+    while(getline(input, line)){
+        istringstream iss(line);
+        long long x, y;
+        if(!(iss >> x >> y)){
+            break; //error
+        }
+        cell c = make_pair(x, y);
+        aliveCells.push_back(c);
+    }
+    input.close();
+    return aliveCells;
+}
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Game of life\n";
+    Game gol = Game(parseInput(argv[1]));
+    int run = 1;
+    int i =0;
+    char cont;
+    while(run == 1){
+        i++;
+        gol.print();
+        //system("sleep .1");
+        gol.update();
+        gol.print();
+        if(i%1000 == 0 && i != 1){//every n iterations stop, print and ask
+            cout << "Continue iteration? (y/n): ";
+            cin >> cont;
+//            while(cont != 'y' || cont != 'n'){
+//                cin >> cont;
+//            }
+            if(cont == 'n'){
+                run = 0;
+                break;
+            }
+        }
+    }
+    
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
