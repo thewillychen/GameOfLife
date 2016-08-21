@@ -11,6 +11,7 @@
 #include <vector>
 #include <boost/functional/hash.hpp>
 #include <fstream>
+#include <SDL2/SDL.h>
 
 using namespace std;
 
@@ -24,6 +25,7 @@ public:
     Game(vector<cell> cells);
     void update();
     void print();
+    int generation;
     
 private:
     cell_map living;
@@ -34,6 +36,7 @@ private:
 
 Game::Game(vector<cell> cells){
     //iterate through the list of cells, adding each one into living
+    generation = 0;
     for(cell c : cells){
         living[c] = 1;
     }
@@ -47,6 +50,7 @@ void Game::update(){
     //      if found
     //Iterate through the neighbors map to add to nextGen every dead cell that has count 3// can do this during last step probably. add it to nextgen if it hits 3, remove if it hits 4
     cell_map nextGen;
+    generation++;
     for(auto cellValue : living){
         cell c = cellValue.first;
         int numAlive = countNeighbors(c.first, c.second);
@@ -85,7 +89,7 @@ int Game::countNeighbors(long long x, long long y){
 }
 
 void Game::print(){
-    cout << "Living cells" << endl;
+    cout << "Generation: " << generation << " Living cells: " << living.size() << endl;
     for(auto cellValue : living){
         cout << cellValue.first.first << ", " << cellValue.first.second << endl;
     }
@@ -118,7 +122,6 @@ int main(int argc, const char * argv[]) {
     char cont;
     while(run == 1){
         i++;
-        gol.print();
         //system("sleep .1");
         gol.update();
         gol.print();

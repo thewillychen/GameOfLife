@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../game.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:../game.h">
+   </FileRef>
+   <FileRef
+      location = "group:../GameOfLife/graphics.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:../GameOfLife/graphics.h">
+   </FileRef>
+   <FileRef
       location = "self:GameOfLife.xcodeproj">
    </FileRef>
 </Workspace>

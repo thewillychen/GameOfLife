@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1C7F421D69FBB40033D3B1 /* graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C7F401D69FBB40033D3B1 /* graphics.cpp */; };
+		3F1C7F451D6A00AA0033D3B1 /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C7F431D6A00AA0033D3B1 /* game.cpp */; };
+		3F5100601D695429004E40B0 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F51005F1D695429004E40B0 /* SDL2.framework */; };
 		3F65CF061D667230009A7B02 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F65CF051D667230009A7B02 /* main.cpp */; };
 		3FB5A0041D69046C00A2A6E1 /* input1.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3FB5A0001D68FE3A00A2A6E1 /* input1.txt */; };
 /* End PBXBuildFile section */
@@ -34,6 +37,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F1C7F401D69FBB40033D3B1 /* graphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = graphics.cpp; sourceTree = "<group>"; };
+		3F1C7F411D69FBB40033D3B1 /* graphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = graphics.h; sourceTree = "<group>"; };
+		3F1C7F431D6A00AA0033D3B1 /* game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
+		3F1C7F441D6A00AA0033D3B1 /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
+		3F51005F1D695429004E40B0 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		3F65CF021D667230009A7B02 /* GameOfLife */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameOfLife; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F65CF051D667230009A7B02 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3FB5A0001D68FE3A00A2A6E1 /* input1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = input1.txt; path = ../input1.txt; sourceTree = "<group>"; };
@@ -44,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5100601D695429004E40B0 /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +62,7 @@
 		3F65CEF91D667230009A7B02 = {
 			isa = PBXGroup;
 			children = (
+				3F51005F1D695429004E40B0 /* SDL2.framework */,
 				3F65CF041D667230009A7B02 /* GameOfLife */,
 				3F65CF031D667230009A7B02 /* Products */,
 			);
@@ -69,6 +79,10 @@
 		3F65CF041D667230009A7B02 /* GameOfLife */ = {
 			isa = PBXGroup;
 			children = (
+				3F1C7F431D6A00AA0033D3B1 /* game.cpp */,
+				3F1C7F441D6A00AA0033D3B1 /* game.h */,
+				3F1C7F401D69FBB40033D3B1 /* graphics.cpp */,
+				3F1C7F411D69FBB40033D3B1 /* graphics.h */,
 				3FB5A0001D68FE3A00A2A6E1 /* input1.txt */,
 				3F65CF051D667230009A7B02 /* main.cpp */,
 			);
@@ -132,7 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1C7F421D69FBB40033D3B1 /* graphics.cpp in Sources */,
 				3F65CF061D667230009A7B02 /* main.cpp in Sources */,
+				3F1C7F451D6A00AA0033D3B1 /* game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +235,10 @@
 		3F65CF0A1D667230009A7B02 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -232,6 +252,10 @@
 		3F65CF0B1D667230009A7B02 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
