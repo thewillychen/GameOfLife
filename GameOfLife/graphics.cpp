@@ -2,9 +2,7 @@
 //  graphics.cpp
 //  
 //
-//  Created by Willy Chen on 8/21/16.
-//
-//
+
 
 #include "graphics.h"
 #include <cmath>

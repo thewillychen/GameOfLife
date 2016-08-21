@@ -2,9 +2,6 @@
 //  main.cpp
 //  GameOfLife
 //
-//  Created by Willy Chen on 8/18/16.
-//  Copyright (c) 2016 Willy Chen. All rights reserved.
-//
 
 #include <iostream>
 #include <vector>
@@ -62,7 +59,8 @@ int main(int argc, const char * argv[]) {
             if(e.type == SDL_QUIT){
                 quit = true;
             }
-            if (e.type == SDL_KEYDOWN and e.key.keysym.sym == SDLK_SPACE) {
+            //Pause
+            else if (e.type == SDL_KEYDOWN and e.key.keysym.sym == SDLK_SPACE) {
                 gol.pause();
             }
         }
@@ -77,27 +75,6 @@ int main(int argc, const char * argv[]) {
     cout << "Exiting Game" << endl;
     return 0;
 }
-    
-//    int run = 1;
-//    int i =0;
-//    char cont;
-//    while(run == 1){
-//        i++;
-//        //system("sleep .1");
-//        gol.update();
-//        gol.print();
-//        if(i%1000 == 0 && i != 1){//every n iterations stop, print and ask
-//            cout << "Continue iteration? (y/n): ";
-//            cin >> cont;
-////            while(cont != 'y' || cont != 'n'){
-////                cin >> cont;
-////            }
-//            if(cont == 'n'){
-//                run = 0;
-//                break;
-//            }
-//        }
-//    }
 
 
 

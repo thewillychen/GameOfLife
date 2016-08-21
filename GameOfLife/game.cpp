@@ -2,15 +2,13 @@
 //  game.cpp
 //  
 //
-//  Created by Willy Chen on 8/21/16.
-//
-//
+
 
 #include "game.h"
 using namespace std;
 
+//Instantiates the original living cells of the game of life
 Game::Game(vector<cell> cells){
-    //iterate through the list of cells, adding each one into living
     generation = 0;
     paused = true;
     for(cell c : cells){
@@ -18,13 +16,11 @@ Game::Game(vector<cell> cells){
     }
 }
 
+//Determine the next generation
+//Iterates through living cells
+//Checks the number of neighbors while adding dead neighbors to another map
+//Applies Conway's Game of Life rules to currently living cells and then dead cells
 void Game::update(){
-    //Living will be set to new map nextGen
-    //Iterate through the living cells
-    //  check number of neighbors - if within constraints add to nextGen
-    //      At each stage, add each of these neighbors into the the map of neighbors and increment the count
-    //      if found
-    //Iterate through the neighbors map to add to nextGen every dead cell that has count 3// can do this during last step probably. add it to nextgen if it hits 3, remove if it hits 4
     if(paused){
         return;
     }
@@ -44,23 +40,20 @@ void Game::update(){
         }
     }
     deadNeighbors.clear();
-    //set living to be the next generation
+    
     living = nextGen;
     return;
 }
 
+//Checks each of the 8 positions around x,y
+//Adds dead neighbors to the dead neighbors map to check if these will be alive next gen
 int Game::countNeighbors(long long x, long long y){
-    //check each of 8 positions around x,y
-    //add these to the neighbors map and do the count/adding to
-    
-    //should deal with wrapping around or bounding the board
     int numAlive = 0;
     for(int d = 0; d <8; d++){
         cell c = make_pair(x+dx[d],y+dy[d]);
         if(living.count(c) > 0){
             numAlive++;
         }
-        //Only adding dead cells to the neighbors list. Alive cells will be taken care of in the iteration of update using countNeighbors
         else{
             deadNeighbors[c]+=1;
         }
@@ -68,7 +61,7 @@ int Game::countNeighbors(long long x, long long y){
     return numAlive;
 }
 
-void Game::printFull(){
+void Game::printVerbose(){
     cout << "Generation: " << generation << " Living cells: " << living.size() << endl;
     for(auto cellValue : living){
         cout << cellValue.first.first << ", " << cellValue.first.second << endl;

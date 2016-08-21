@@ -2,9 +2,7 @@
 //  game.h
 //  
 //
-//  Created by Willy Chen on 8/21/16.
-//
-//
+
 
 #ifndef ____game__
 #define ____game__
@@ -28,7 +26,7 @@ public:
     Game(vector<cell> cells);
     void update();
     void print();
-    void printFull();
+    void printVerbose();
     int generation;
     cell_map living;
     bool paused;

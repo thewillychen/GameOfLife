@@ -2,9 +2,7 @@
 //  graphics.h
 //  
 //
-//  Created by Willy Chen on 8/21/16.
-//
-//
+
 
 #ifndef ____graphics__
 #define ____graphics__
