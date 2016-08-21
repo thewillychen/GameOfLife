@@ -12,7 +12,7 @@
 Graphics::Graphics(){
     camera_x = 0;
     camera_y = 0;
-    zoom = 60;
+    zoom = 5;
     SDL_Init(SDL_INIT_VIDEO);
     window = SDL_CreateWindow("Game of Life", 0, 0, WINDOW_SIZE_X, WINDOW_SIZE_Y, SDL_WINDOW_SHOWN);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
@@ -31,9 +31,10 @@ void Graphics::render(const Game& game) const {
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_Rect destination;
     // Draw board
-    for (cell c : game.board) {
-        if(c.first <= WINDOW_SIZE_X && c.first >= 0 && c.second <= WINDOW_SIZE_Y && c.secon >=0){
-            destination = {(int)(c.x * zoom - camera_x), (int)(c.y * zoom - camera_y), (int)ceil(zoom), (int)ceil(zoom)};
+    for (auto cellVal : game.living) {
+        cell c = cellVal.first;
+        if(c.first <= WINDOW_SIZE_X && c.first >= 0 && c.second <= WINDOW_SIZE_Y && c.second >=0){
+            destination = {(int)(c.first * zoom - camera_x), (int)(c.second * zoom - camera_y), (int)ceil(zoom), (int)ceil(zoom)};
             SDL_RenderFillRect(renderer, &destination);
         }
     }
