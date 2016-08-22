@@ -13,7 +13,7 @@ using namespace std;
 const int TARGET_FRAMERATE = 60;
 const int TARGET_TICKRATE = 2;
 const int FRAMES_PER_TICK = TARGET_FRAMERATE / TARGET_TICKRATE;
-const int TARGET_TIMESTEP = 1000 / TARGET_FRAMERATE;
+const int TARGET_TIMESTEP = 500 / TARGET_FRAMERATE;
 
 vector<cell> parseInput(string file){
     string line;

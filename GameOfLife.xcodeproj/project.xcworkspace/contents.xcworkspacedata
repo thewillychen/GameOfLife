@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../game.cpp">
-   </FileRef>
-   <FileRef
-      location = "group:../game.h">
-   </FileRef>
-   <FileRef
       location = "group:../GameOfLife/graphics.cpp">
    </FileRef>
    <FileRef

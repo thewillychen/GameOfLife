@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		3F1C7F421D69FBB40033D3B1 /* graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C7F401D69FBB40033D3B1 /* graphics.cpp */; };
 		3F1C7F451D6A00AA0033D3B1 /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C7F431D6A00AA0033D3B1 /* game.cpp */; };
+		3F1C7F481D6A772B0033D3B1 /* glidergun.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3F1C7F461D6A76B30033D3B1 /* glidergun.txt */; };
+		3F1C7F4D1D6B684B0033D3B1 /* diehard2.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3F1C7F4C1D6B683B0033D3B1 /* diehard2.txt */; };
+		3F1C7F4E1D6B684B0033D3B1 /* acorn.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3F1C7F491D6B68020033D3B1 /* acorn.txt */; };
+		3F1C7F4F1D6B684B0033D3B1 /* diehard.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3F1C7F4A1D6B68020033D3B1 /* diehard.txt */; };
+		3F1C7F501D6B684B0033D3B1 /* infinite.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3F1C7F4B1D6B68020033D3B1 /* infinite.txt */; };
 		3F5100601D695429004E40B0 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F51005F1D695429004E40B0 /* SDL2.framework */; };
 		3F65CF061D667230009A7B02 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F65CF051D667230009A7B02 /* main.cpp */; };
 		3FB5A0041D69046C00A2A6E1 /* input1.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3FB5A0001D68FE3A00A2A6E1 /* input1.txt */; };
@@ -30,6 +35,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				3F1C7F4D1D6B684B0033D3B1 /* diehard2.txt in CopyFiles */,
+				3F1C7F4E1D6B684B0033D3B1 /* acorn.txt in CopyFiles */,
+				3F1C7F4F1D6B684B0033D3B1 /* diehard.txt in CopyFiles */,
+				3F1C7F501D6B684B0033D3B1 /* infinite.txt in CopyFiles */,
+				3F1C7F481D6A772B0033D3B1 /* glidergun.txt in CopyFiles */,
 				3FB5A0041D69046C00A2A6E1 /* input1.txt in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,6 +51,11 @@
 		3F1C7F411D69FBB40033D3B1 /* graphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = graphics.h; sourceTree = "<group>"; };
 		3F1C7F431D6A00AA0033D3B1 /* game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
 		3F1C7F441D6A00AA0033D3B1 /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
+		3F1C7F461D6A76B30033D3B1 /* glidergun.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = glidergun.txt; sourceTree = "<group>"; };
+		3F1C7F491D6B68020033D3B1 /* acorn.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = acorn.txt; sourceTree = "<group>"; };
+		3F1C7F4A1D6B68020033D3B1 /* diehard.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = diehard.txt; sourceTree = "<group>"; };
+		3F1C7F4B1D6B68020033D3B1 /* infinite.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = infinite.txt; sourceTree = "<group>"; };
+		3F1C7F4C1D6B683B0033D3B1 /* diehard2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = diehard2.txt; sourceTree = "<group>"; };
 		3F51005F1D695429004E40B0 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		3F65CF021D667230009A7B02 /* GameOfLife */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameOfLife; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F65CF051D667230009A7B02 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -59,6 +74,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F1C7F471D6A76E00033D3B1 /* Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				3F1C7F4C1D6B683B0033D3B1 /* diehard2.txt */,
+				3F1C7F491D6B68020033D3B1 /* acorn.txt */,
+				3F1C7F4A1D6B68020033D3B1 /* diehard.txt */,
+				3F1C7F4B1D6B68020033D3B1 /* infinite.txt */,
+				3F1C7F461D6A76B30033D3B1 /* glidergun.txt */,
+			);
+			name = Inputs;
+			sourceTree = "<group>";
+		};
 		3F65CEF91D667230009A7B02 = {
 			isa = PBXGroup;
 			children = (
@@ -79,12 +106,13 @@
 		3F65CF041D667230009A7B02 /* GameOfLife */ = {
 			isa = PBXGroup;
 			children = (
+				3F1C7F471D6A76E00033D3B1 /* Inputs */,
 				3F1C7F431D6A00AA0033D3B1 /* game.cpp */,
 				3F1C7F441D6A00AA0033D3B1 /* game.h */,
 				3F1C7F401D69FBB40033D3B1 /* graphics.cpp */,
 				3F1C7F411D69FBB40033D3B1 /* graphics.h */,
-				3FB5A0001D68FE3A00A2A6E1 /* input1.txt */,
 				3F65CF051D667230009A7B02 /* main.cpp */,
+				3FB5A0001D68FE3A00A2A6E1 /* input1.txt */,
 			);
 			path = GameOfLife;
 			sourceTree = "<group>";
