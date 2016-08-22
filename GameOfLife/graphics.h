@@ -21,8 +21,6 @@ public:
     ~Graphics();
     void render(const Game&) const;
     
-    double camera_x;
-    double camera_y;
     double zoom;
 
 private:

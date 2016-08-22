@@ -8,8 +8,6 @@
 #include <cmath>
 
 Graphics::Graphics(){
-    camera_x = 0;
-    camera_y = 0;
     zoom = 5;
     SDL_Init(SDL_INIT_VIDEO);
     window = SDL_CreateWindow("Game of Life", 0, 0, WINDOW_SIZE_X, WINDOW_SIZE_Y, SDL_WINDOW_SHOWN);
@@ -32,7 +30,7 @@ void Graphics::render(const Game& game) const {
     for (auto cellVal : game.living) {
         cell c = cellVal.first;
         if(c.first <= WINDOW_SIZE_X && c.first >= 0 && c.second <= WINDOW_SIZE_Y && c.second >=0){
-            destination = {(int)(c.first * zoom - camera_x), (int)(c.second * zoom - camera_y), (int)ceil(zoom), (int)ceil(zoom)};
+            destination = {(int)(c.first * zoom), (int)(c.second * zoom), (int)ceil(zoom), (int)ceil(zoom)};
             SDL_RenderFillRect(renderer, &destination);
         }
     }
